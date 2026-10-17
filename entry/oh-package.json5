@@ -1,0 +1,9 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "X 套壳主模块（唯一模块）",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {}
+}

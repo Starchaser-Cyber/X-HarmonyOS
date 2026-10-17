@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "X 套壳主模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "X"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "X"
+    }
+  ]
+}

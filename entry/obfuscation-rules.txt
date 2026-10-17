@@ -1,0 +1,2 @@
+# 本工程默认关闭混淆（buildOptionSet.release 中 enable: false），此文件仅占位。
+# 若日后开启混淆，规则写在这里。

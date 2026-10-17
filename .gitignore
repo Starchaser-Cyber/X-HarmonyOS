@@ -1,0 +1,29 @@
+# HarmonyOS / DevEco Studio 构建产物与本地配置
+build/
+**/build/
+**/oh_modules/
+.hvigor/
+**/.preview/
+.idea/
+.codegenie/
+.appanalyzer/
+.cxx/
+local.properties
+
+# 签名材料 —— 永不入库（每台机器自己生成）
+*.p12
+*.cer
+*.csr
+*.p7b
+signingConfig/
+**/build-profile-signed.json5
+
+# 产物
+*.hap
+*.hsp
+*.har
+*.abc
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
