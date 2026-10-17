@@ -37,7 +37,7 @@ X 的协议闭源、没有 Telegram TDLib 那样可复用的客户端核心库�
 ## 构建运行
 
 ```bash
-git clone https://github.com/<你的用户名>/X-HarmonyOS.git
+git clone https://github.com/Starchaser-Cyber/X-HarmonyOS.git
 # DevEco Studio 打开仓库根目录（build-profile.json5 所在层），等 Sync 完成
 ```
 
@@ -63,6 +63,31 @@ git clone https://github.com/<你的用户名>/X-HarmonyOS.git
 
 > 本仓库 `build-profile.json5` 的 `signingConfigs` 恒为空数组：签名材料是
 > 机器绑定的，请各自生成，不要提交。
+
+## 不想装 DevEco？直接下载 hap 自签安装
+
+[Releases](../../releases) 页提供 **未签名** 的 `entry-default-unsigned.hap`。
+鸿蒙不允许安装无签名包，需要你自己用**华为开发者账号**完成签名安装，两条路：
+
+**方式 A：小白调试助手（图形界面，推荐新手）**
+
+第三方工具，本质是把官方签名流程（AGC 申请调试证书 + Profile 绑定你的设备
+UDID + 本地签名）封装成了一键操作，**需要登录你自己的华为开发者账号**，
+不会绕过任何系统校验。流程：装好工具 → 登录开发者账号 → 选 hap → 安装。
+
+**方式 B：命令行（无额外工具）**
+
+有 DevEco 或 command-line-tools 的机器上，用你自己的调试证书签名后安装：
+
+```bash
+hdc shell bm get -udid        # 取手机 UDID，去 AGC 后台把它加进调试 Profile
+hdc install entry-default-signed.hap
+```
+
+> ⚠️ 提醒：hap 未签名所以任何人都能签，但**请从本仓库 Releases 下载**，
+> 不要装来路不明的重签版本——签名的意义在于"这个包谁签的我信谁"，
+> 二进制被篡改后再签名你是无法从安装包本身分辨的。信源码，别信二进制。
+> （自验方法：下载后用源码自行构建，比较 ets/modules.abc 的 SHA256。）
 
 ## 已知限制（设计取舍，非 bug）
 
